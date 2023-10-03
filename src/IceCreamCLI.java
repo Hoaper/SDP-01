@@ -9,9 +9,13 @@ public class IceCreamCLI {
         iceCreamWithChocolateAndNuts.addTopping(nutsTopping);
 
 
+        IceCream iceCreamWithVanillaAndSprinkles = new IceCream(vanillaTaste);
+        iceCreamWithVanillaAndSprinkles.addTopping(sprinklesTopping);
+
 
         IceCreamShop shop = IceCreamShop.getInstance();
         shop.addIceCream(iceCreamWithChocolateAndNuts);
+        shop.addIceCream(iceCreamWithVanillaAndSprinkles);
 
         shop.printAllIceCreams();
     }
