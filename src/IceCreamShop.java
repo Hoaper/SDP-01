@@ -1,8 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
 
+// Singleton realization
 public class IceCreamShop {
-    private static IceCreamShop instance;
+
+    private static IceCreamShop instance; // Required instance
     private final List<IceCream> iceCreamList;
 
     // Private constructor to prevent instantiation
