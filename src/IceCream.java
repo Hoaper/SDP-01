@@ -4,8 +4,9 @@ import java.util.List;
 public class IceCream {
     private final Taste taste;
     private final List<Topping> toppings;
+    private PricingStrategy pricingStrategy;
 
-    public IceCream(Taste taste) {
+    public IceCream(Taste taste, PricingStrategy pricingStrategy) {
         this.taste = taste;
         this.toppings = new ArrayList<>();
     }
@@ -23,7 +24,9 @@ public class IceCream {
     }
     public double getPrice() {
         double toppingsPrice = getToppingsPrice();
-        return this.taste.getBaseCost() + toppingsPrice;
+        double baseTasteCost = this.taste.getBaseCost();
+
+        return this.pricingStrategy.calculatePrice(baseTasteCost) + toppingsPrice;
     }
 
     public String getTaste() {

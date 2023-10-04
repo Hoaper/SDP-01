@@ -4,7 +4,7 @@ import java.util.List;
 // Singleton realization
 public class IceCreamShop {
 
-    private static IceCreamShop instance; // Required instance
+    private static IceCreamShop instance;
     private final List<IceCream> iceCreamList;
 
     // Private constructor to prevent instantiation
@@ -14,7 +14,6 @@ public class IceCreamShop {
     }
 
     public static IceCreamShop getInstance() {
-        // Lazy initialization: create the instance only if it hasn't been created yet
         if (instance == null) {
             instance = new IceCreamShop();
         }
